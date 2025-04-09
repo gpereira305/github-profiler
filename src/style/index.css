@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fff;
+  --color-secondary: #0587ff;
+  --color-tertiary: #24292e;
+  --color-dark: #000000;
+  --color-dark-light: #989898;
+  --color-gradient-primary: linear-gradient(to right, #0056a6, #0587ff);
+  --max-w-200: 50px calc((100% - 1280px) / 2) 50px calc((100% - 1280px) / 2);
+}
+
+* {
+  transition-property: none;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-variation-settings: "wdth" 100;
+  background-color: var(--color-normal-white);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+.header-width {
+  padding: 0 20px;
+
+  @media (min-width: 1280px) {
+    padding: 0px calc((100% - 1280px) / 2) 0 calc((100% - 1280px) / 2);
+  }
+}
