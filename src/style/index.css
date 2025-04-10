@@ -50,3 +50,7 @@ button {
     padding: 0px calc((100% - 1280px) / 2) 0 calc((100% - 1280px) / 2);
   }
 }
+
+.active-link.active {
+  border-bottom: 2px solid #fd8c73;
+}

@@ -1,0 +1,41 @@
+import { Link } from "@tanstack/react-router";
+import { BookIcon, StarOulinedIcon } from "../Icons";
+
+export default function NavigationBar() {
+  const linkStyle = `flex items-center text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent`;
+
+  return (
+    <nav className="flex gap-x-24 p-2">
+      <Link to="/" className={linkStyle}>
+        {({ isActive }) => (
+          <>
+            <BookIcon fill={isActive ? "#000" : "#989898"} />
+            <span className={isActive ? "text-black" : "text-dark-light"}>
+              Repositories
+            </span>
+            <PillElement value={81} />
+          </>
+        )}
+      </Link>
+      <Link to="/starred" className={linkStyle}>
+        {({ isActive }) => (
+          <>
+            <StarOulinedIcon fill={isActive ? "#000" : "#989898"} />
+            <span className={isActive ? "text-black" : "text-dark-light"}>
+              Starred
+            </span>
+            <PillElement value={12} />
+          </>
+        )}
+      </Link>
+    </nav>
+  );
+}
+
+const PillElement = ({ value }: { value: number }) => {
+  return (
+    <span className="flex items-center justify-center rounded-2xl bg-[#F8F8F8] border border-dark-light px-4 h-7 text-dark-light text-sm">
+      {value}
+    </span>
+  );
+};
