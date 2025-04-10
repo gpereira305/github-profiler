@@ -6,7 +6,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="max-w-[1280px] w-full h-full mx-auto min-[1280px]:px-0 px-6 flex gap-10 pt-10">
+    <main className="max-w-[1280px] w-full h-full mx-auto min-[1280px]:px-0 px-6 flex gap-10 pt-10 lg:flex-row flex-col">
       <h1 className="hidden">Github profile</h1>
       {children}
     </main>

@@ -2,10 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { BookIcon, StarOulinedIcon } from "../Icons";
 
 export default function NavigationBar() {
-  const linkStyle = `flex items-center text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent px-1`;
+  const linkStyle = `flex items-center text-base sm:text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent px-1`;
 
   return (
-    <nav className="flex gap-x-24 p-2">
+    <nav className="flex sm:gap-x-24 gap-x-2 p-2 sm:justify-start justify-between sm:flex-row flex-col sm:gap-y-0 gap-y-6">
       <Link to="/" className={linkStyle}>
         {({ isActive }) => (
           <>
@@ -34,7 +34,7 @@ export default function NavigationBar() {
 
 const PillElement = ({ value }: { value: number }) => {
   return (
-    <span className="flex items-center justify-center rounded-2xl bg-[#F8F8F8] border border-dark-light px-4 h-7 text-dark-light text-sm">
+    <span className="flex items-center justify-center rounded-2xl bg-[#F8F8F8] border border-dark-light px-4 h-7 text-dark-light text-sm xs:ml-0 ml-auto">
       {value}
     </span>
   );
