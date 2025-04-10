@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { BookIcon, StarOulinedIcon } from "../Icons";
 
 export default function NavigationBar() {
-  const linkStyle = `flex items-center text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent`;
+  const linkStyle = `flex items-center text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent px-1`;
 
   return (
     <nav className="flex gap-x-24 p-2">
