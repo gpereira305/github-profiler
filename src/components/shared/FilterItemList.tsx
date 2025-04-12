@@ -1,43 +1,56 @@
+import { useToggleTypeStore } from "../../states/toggle-type-store";
+
 type FilterItemListProps = {
-  filterList: any;
-  filterValue: string;
-  handleTypeFilterChange: any;
-  toggleType: boolean | string | null;
+  filterOptionTypes: string[];
+  filterOptionLanguages: string[];
+  filters: any;
+  handleFiltersChange: any;
 };
 
 export default function FilterItemList({
-  filterList,
-  filterValue,
-  handleTypeFilterChange,
-  toggleType,
+  filterOptionTypes,
+  filterOptionLanguages,
+  filters,
+  handleFiltersChange,
 }: FilterItemListProps) {
-  console.log(filterValue);
+  const { toggleType } = useToggleTypeStore();
+
+  const labelStyle = `flex items-center gap-3 text-base text-dark font-normal pointer-events-none`;
+  const inputStyle = `h-5 w-5 text-blue-600 border-2 border-[#BFBFBF] rounded-sm focus:ring-blue-500 pointer-events-auto cursor-pointer`;
 
   return (
-    <div className="flex gap-2 flex-col pt-4">
-      <h2
-        className="
-          text-2xl text-dark font-bold pb-10
-        "
-      >
-        {toggleType ? "Types" : "Languages"}
-      </h2>
-      <div className="flex gap-4 flex-col ">
-        {filterList.map((item: any) => (
-          <label
-            className="flex items-center gap-3 text-base text-dark font-normal"
-            key={item.value}
-          >
-            <input
-              type="checkbox"
-              checked={filterValue === item.value}
-              onChange={() => handleTypeFilterChange(item.value)}
-              className="h-5 w-5 text-blue-600 border-2 border-[#BFBFBF] rounded-sm focus:ring-blue-500 cupo"
-            />
-            {item.label}
-          </label>
-        ))}
-      </div>
+    <div className="flex gap-4 flex-col">
+      {toggleType
+        ? filterOptionTypes.map((type) => (
+            <label key={type} className={labelStyle}>
+              <input
+                type="checkbox"
+                checked={filters.type === type}
+                onChange={() => handleFiltersChange("type", type)}
+                className={inputStyle}
+              />
+              {type}
+            </label>
+          ))
+        : filterOptionLanguages.map((language) => (
+            <label key={language} className={labelStyle}>
+              <input
+                type="checkbox"
+                checked={
+                  filters.language ===
+                  (language === "All Languages" ? "" : language)
+                }
+                onChange={() =>
+                  handleFiltersChange(
+                    "language",
+                    language === "All Languages" ? "" : language
+                  )
+                }
+                className={inputStyle}
+              />
+              {language}
+            </label>
+          ))}
     </div>
   );
 }

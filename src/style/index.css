@@ -8,6 +8,7 @@
   --color-tertiary: #24292e;
   --color-dark: #000000;
   --color-dark-light: #989898;
+  --color-gray: #f8f8f8;
   --color-gradient: linear-gradient(to right, #0056a6, #0587ff);
   --max-w-200: 50px calc((100% - 1280px) / 2) 50px calc((100% - 1280px) / 2);
 }
@@ -57,14 +58,16 @@ button {
 
 /* estilo do drawer */
 .EZDrawer__container.custom-drawer {
-  width: 470px !important;
+  width: 420px !important;
   padding: 20px !important;
   border-radius: 0 10px 10px 0 !important;
   background-color: var(--color-primary) !important;
   min-height: 100vh !important;
+  height: auto !important;
   inset: 0 !important;
-
-  @media screen and (max-width: 470px) {
+}
+@media screen and (max-width: 470px) {
+  .EZDrawer__container.custom-drawer {
     width: 100% !important;
     border-radius: 0 !important;
   }

@@ -13,18 +13,19 @@ export default function Filters() {
     useFetchUserData() ?? {};
 
   const handleDrawerToggle = (filterType: string) => {
+    console.log(filterType);
     setToggleType(filterType === "types");
     toggleDrawer();
   };
 
   return (
     <>
-      <div className="flex items-center justify-between bg-light_color mb-6 h-10 w-full">
-        <div className="flex items-center w-full relative max-w-[440px]">
+      <div className="flex items-center justify-between bg-light_color mb-8 sm:mb-6 min-h-10 w-full gap-3 flex-col md:flex-row">
+        <div className="flex items-center w-full relative md:max-w-[440px] max-w-none">
           <SearchIcon className="absolute left-1" />
           <input
             className="
-            px-10 w-full py-2 bg-light_color border-b-[1px] border-[#F4F4F4] 
+            px-10 w-full py-2 bg-light_color border-b-[1px] border-[#F4F4F4]
             focus:outline-none focus:border-secondary text-lg text-dark-light font-normal"
             type="text"
             placeholder="Search here"
@@ -42,7 +43,7 @@ export default function Filters() {
           )}
         </div>
 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center justify-center  sm:justify-end w-full">
           <Button onClick={() => handleDrawerToggle("types")}>
             <ChevronIcon />
             types

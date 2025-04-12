@@ -105,21 +105,6 @@ export const ChainIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export const EmojiIcon = (props: React.SVGProps<SVGSVGElement>) => {
-  const { fill, width, height } = props;
-
-  return (
-    <svg
-      width={width || 18}
-      height={height || 19}
-      viewBox="0 0 18 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0 18.26H18V0.26H0V18.26Z" fill={fill || "#000"} />
-    </svg>
-  );
-};
 export const ForkIcon = (props: React.SVGProps<SVGSVGElement>) => {
   const { fill, width, height } = props;
 
@@ -266,7 +251,7 @@ export const ChevronIcon = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 export const CloseIcon = (props: React.SVGProps<SVGSVGElement>) => {
-  const { fill, width, height, className } = props;
+  const { fill, width, height, className, onClick } = props;
 
   return (
     <svg
@@ -276,6 +261,7 @@ export const CloseIcon = (props: React.SVGProps<SVGSVGElement>) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      onClick={onClick}
     >
       <path
         d="M18 6L6 18"

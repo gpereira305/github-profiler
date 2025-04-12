@@ -1,11 +1,12 @@
 import Image from "./shared/Image";
+import useFetchUserData from "../hooks/useFetchUserData";
 import {
   BuildingIcon,
   ChainIcon,
   InstagramIcon,
   LocationPinIcon,
 } from "./Icons";
-import useFetchUserData from "../hooks/useFetchUserData";
+import UserProfileSkeleton from "./shared/UserProfileSkeleton";
 
 export default function UserProfile() {
   const { userProfileQuery } = useFetchUserData();
@@ -15,37 +16,55 @@ export default function UserProfile() {
     isLoading: isUserProfileLoading,
   } = userProfileQuery;
 
+  const asideStyle = `flex-1 py-2 px-4 sm:px-8 flex max-w-[380px] flex-col lg:mx-0 mx-auto sm:w-ft w-full`;
+  console.log(isUserProfileLoading);
+  //display de carregamento
   if (isUserProfileLoading) {
-    return <div>Carregando...</div>;
+    return (
+      <aside className={asideStyle}>
+        <UserProfileSkeleton />
+      </aside>
+    );
   }
-
+  // diplay de erro
   if (userProfileError) {
-    return <div>Erro ao carregar perfil do usuário.</div>;
+    return (
+      <aside
+        className={`${asideStyle} bg-gray max-h-[70vh] rounded-md items-center justify-center`}
+      >
+        <h2 className="text-lg text-red-500 font-bold text-center">
+          Erro ao carregar perfil do usuário :(
+        </h2>
+      </aside>
+    );
   }
 
   const { name, company, avatar_url, location, bio, socialMedia, instagram } =
     userProfile;
 
   return (
-    <aside className="flex-1 py-2 px-8 flex max-w-[380px] flex-col lg:mx-0 mx-auto">
-      <figure className="flex items-center bg-primary flex-col gap-4 pb-8">
+    <aside className={asideStyle}>
+      <figure className="flex items-center bg-primary flex-col gap-4 pb-4 w-[150px] h-auto rounded-full max-h-[200px] mx-auto relative">
         <Image
           src={avatar_url}
           title={name}
           alt={name}
-          className="object-cover w-[150px] h-[150px] rounded-full"
+          className="object-cover w-[inherit] h-[inherit] rounded-[inherit]"
         />
-        <figcaption className="text-sm text-dark-light text-center flex-col flex">
-          <span className="text-dark text-2xl font-bold">{name}</span>
-          <span className="text-base text-dark-light font-normal">{bio}</span>
-        </figcaption>
       </figure>
+      <div className="text-sm text-dark-light text-center flex-col flex">
+        <span className="text-dark text-2xl font-bold">{name}</span>
+        <span className="text-base text-dark-light font-normal">
+          {bio || "----"}
+        </span>
+      </div>
+
       <ul className="px-8 flex flex-col gap-2">
         <li className="flex items-center gap-4 text-sm text-secondary font-normal">
-          <BuildingIcon /> {company}
+          <BuildingIcon /> {company || "----"}
         </li>
         <li className="flex items-center gap-4 text-sm text-secondary font-normal">
-          <LocationPinIcon /> {location}
+          <LocationPinIcon /> {location || "----"}
         </li>
         <li className="flex items-center gap-4 text-sm text-secondary font-normal">
           <ChainIcon />
@@ -54,7 +73,7 @@ export default function UserProfile() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {socialMedia || "Não informado"}
+            {socialMedia || "----"}
           </a>
         </li>
         <li className="flex items-center gap-4 text-sm text-secondary font-normal">
@@ -64,7 +83,7 @@ export default function UserProfile() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {instagram || "Não informado"}
+            {instagram || "----"}
           </a>
         </li>
       </ul>

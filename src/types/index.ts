@@ -1,23 +1,20 @@
-export type ReposListTypes = {
-  data: ReposListTypes[];
-  id: number;
-  name: string;
-  owner: {
-    login: string;
-  };
-  html_url: string;
-  description: string;
-  stargazers_count: number;
-  desc: string;
-  language?: string | null;
-  forks: number | null;
-  stars: number;
-  isLoading: boolean;
-  isPending: boolean;
-  isError: boolean;
-  isRepos: boolean;
-  ITEMS_LENGTH: number;
-};
+export interface ReposListTypes {
+  id?: number;
+  forks?: number | null | undefined;
+  language?: string | null | undefined;
+  stargazers_count?: number | null | undefined;
+  isRepos?: boolean | undefined;
+  html_url?: string | null;
+  description?: string | null;
+  owner?: { login: string };
+  login?: string;
+  name?: string;
+  data?: ReposListTypes[] | undefined;
+  isLoading?: boolean | null;
+  isPending?: boolean | null;
+  isError?: boolean | null | undefined;
+  fork?: boolean | undefined;
+}
 
 export type GithubUser = {
   name: string;

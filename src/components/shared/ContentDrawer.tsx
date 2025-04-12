@@ -1,6 +1,8 @@
+import React from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useDrawerStore } from "../../states/drawer-store";
+
 export default function ContentDrawer({
   children,
 }: {
@@ -10,7 +12,7 @@ export default function ContentDrawer({
 
   return (
     <Drawer
-      open={isOpen}
+      open={Boolean(isOpen)}
       onClose={toggleDrawer}
       direction="left"
       className="custom-drawer"
