@@ -1,39 +1,75 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import RepoList from "../components/shared/RepoList";
 import { ReposListTypes } from "../types";
-
-const data = [
-  {
-    name: "Chamber 5.62",
-    highlight: "Smite and Ignite",
-    desc: "Node.js Foundation Release Working Group.",
-    language: "C++",
-    forks: 525,
-  },
-  {
-    name: "BNB",
-    highlight: "Vandal",
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis 
-    vel etiam tellus velit pellentesque scelerisque ut risus.`,
-    language: "Python",
-    forks: null,
-  },
-  {
-    name: "llikatsni",
-    highlight: "Operator",
-    desc: `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque scelerisque ut 
-    risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque 
-    `,
-    language: "JavaScript",
-    forks: 312,
-  },
-];
+import { ForkIcon } from "../components/Icons";
+import useFetchUserData from "../hooks/useFetchUserData";
+import useShowAllContent from "../hooks/useShowAllContent";
+import Button from "../components/shared/Button";
 
 export const Route = createLazyFileRoute("/starred")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  return <RepoList data={data as ReposListTypes[]} />;
+  const { starredReposQuery } = useFetchUserData();
+  useFetchUserData();
+
+  const {
+    data: starredRepos,
+    error: starredReposError,
+    isFetching: isStarredReposLoading,
+  } = starredReposQuery;
+
+  const { displayedRepos, showAll, setShowAll, itemsToDisplay } =
+    useShowAllContent({
+      data: starredRepos,
+    } as ReposListTypes);
+
+  if (isStarredReposLoading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (starredReposError) {
+    return <div>Erro ao carregar repositórios.</div>;
+  }
+
+  return (
+    <>
+      <ul className="flex flex-col gap-10 p-2">
+        {displayedRepos?.map((repo: ReposListTypes) => (
+          <li key={repo.id}>
+            <article className="flex items-center gap-2">
+              <h2 className="text-lg text-dark font-light">
+                {repo.owner.login} /{" "}
+              </h2>
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary font-bold hover:underline"
+              >
+                {repo.name}
+              </a>
+            </article>
+            {repo.description && (
+              <p className="text-sm text-dark-light">{repo.description}</p>
+            )}
+
+            <div className="flex items-center gap-2 justify-between w-full max-w-[150px] pt-3">
+              <span className="text-sm text-dark font-normal flex items-center gap-2">
+                {repo.language || "-- --"}
+              </span>
+
+              <span className="text-sm text-dark font-normal flex items-center gap-2">
+                <ForkIcon />
+                {repo.forks}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+      {!showAll && starredRepos && starredRepos.length > itemsToDisplay && (
+        <Button onClick={() => setShowAll(true)} />
+      )}
+    </>
+  );
 }

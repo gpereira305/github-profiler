@@ -1,36 +1,62 @@
 import { ReposListTypes } from "../../types";
 import { ForkIcon, StarFilledIcon } from "../Icons";
 
-export default function RepoList({ data }: { data: ReposListTypes[] }) {
+export default function RepoList({ data, isLoading, isError }: ReposListTypes) {
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (isError) {
+    return <div>Erro ao carregar repositórios.</div>;
+  }
+  console.log(data);
   return (
     <ul className="flex flex-col gap-10 p-2">
-      {data?.map(({ name, highlight, desc, language, forks, stars }, index) => (
-        <li key={index}>
-          <h2 className="text-lg text-dark font-light">
-            {name} /{" "}
-            <span className="text-secondary font-bold">{highlight}</span>
-          </h2>
-          <p className="text-sm text-dark-light pb-3">{desc}</p>
-          <div className="flex items-center gap-2 justify-between w-full max-w-[200px]">
-            {stars ? (
-              <span className="text-sm text-dark font-normal flex items-center gap-2">
-                <StarFilledIcon fill="#000" /> {stars}
-              </span>
-            ) : (
-              <span className="text-sm text-dark font-normal"> {language}</span>
+      {data?.map(
+        (
+          { name, html_url, description, language, forks, stars, owner },
+          index
+        ) => (
+          <li key={index}>
+            <article className="flex items-center gap-2">
+              <h2 className="text-lg text-dark font-light">{owner.login} / </h2>
+              <a
+                href={html_url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary font-bold"
+              >
+                {name}
+              </a>
+            </article>
+            {description && (
+              <p className="text-sm text-dark-light">{description}</p>
             )}
 
-            <span className="text-sm text-dark font-normal flex items-center gap-2">
-              {forks !== null && (
-                <>
-                  <ForkIcon />
-                  {forks}
-                </>
+            <div className="flex items-center gap-2 justify-between w-full max-w-[200px] pt-3">
+              {stars ? (
+                <span className="text-sm text-dark font-normal flex items-center gap-2">
+                  <StarFilledIcon fill="#000" /> {stars}
+                </span>
+              ) : (
+                <span className="text-sm text-dark font-normal">
+                  {" "}
+                  {language}
+                </span>
               )}
-            </span>
-          </div>
-        </li>
-      ))}
+
+              <span className="text-sm text-dark font-normal flex items-center gap-2">
+                {forks !== null && (
+                  <>
+                    <ForkIcon />
+                    {forks}
+                  </>
+                )}
+              </span>
+            </div>
+          </li>
+        )
+      )}
     </ul>
   );
 }

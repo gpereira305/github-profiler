@@ -1,7 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { BookIcon, StarOulinedIcon } from "../Icons";
+import useFetchUserData from "../../hooks/useFetchUserData";
 
 export default function NavigationBar() {
+  const { starredReposQuery, userReposQuery } = useFetchUserData();
+  const { data: starredRepos } = starredReposQuery;
+  const { data: userRepos } = userReposQuery;
+
   const linkStyle = `flex items-center text-base sm:text-lg gap-4 transition-colors duration-200 pb-2 active-link border-b-2 border-transparent px-1`;
 
   return (
@@ -13,7 +18,7 @@ export default function NavigationBar() {
             <span className={isActive ? "text-black" : "text-dark-light"}>
               Repositories
             </span>
-            <PillElement value={81} />
+            <PillElement value={userRepos?.length || 0} />
           </>
         )}
       </Link>
@@ -24,7 +29,7 @@ export default function NavigationBar() {
             <span className={isActive ? "text-black" : "text-dark-light"}>
               Starred
             </span>
-            <PillElement value={12} />
+            <PillElement value={starredRepos?.length || 0} />
           </>
         )}
       </Link>

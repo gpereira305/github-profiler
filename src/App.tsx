@@ -1,14 +1,15 @@
 import Header from "./components/Header";
 import MainLayout from "./layouts/MainLayout";
 import UserProfile from "./components/UserProfile";
-import RepoContentLayout from "./layouts/RepoContentLayout";
+import UserRepos from "./components/UserRepos";
+
 export default function App() {
   return (
     <>
       <Header />
       <MainLayout>
         <UserProfile />
-        <RepoContentLayout />
+        <UserRepos />
       </MainLayout>
     </>
   );
