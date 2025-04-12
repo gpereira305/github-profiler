@@ -15,6 +15,7 @@ export type ReposListTypes = {
   isLoading: boolean;
   isPending: boolean;
   isError: boolean;
+  isRepos: boolean;
   ITEMS_LENGTH: number;
 };
 

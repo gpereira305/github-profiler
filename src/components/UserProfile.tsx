@@ -15,8 +15,6 @@ export default function UserProfile() {
     isLoading: isUserProfileLoading,
   } = userProfileQuery;
 
-  console.log(userProfile, "userProfile");
-
   if (isUserProfileLoading) {
     return <div>Carregando...</div>;
   }

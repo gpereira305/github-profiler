@@ -105,27 +105,6 @@ export const ChainIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export const ChevronDownIcon = (props: React.SVGProps<SVGSVGElement>) => {
-  const { fill, width, height } = props;
-
-  return (
-    <svg
-      width={width || 24}
-      height={height || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6 9L12 15L18 9"
-        stroke={fill || "#FFF"}
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-};
 export const EmojiIcon = (props: React.SVGProps<SVGSVGElement>) => {
   const { fill, width, height } = props;
 
@@ -231,6 +210,86 @@ export const LocationPinIcon = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M11.7783 2.14109C10.8281 1.19111 9.55964 0.626776 8.2178 0.557017C6.87595 0.487259 5.55583 0.917019 4.51222 1.76335C3.46861 2.60968 2.77549 3.81259 2.56663 5.13991C2.35777 6.46724 2.64798 7.82487 3.38125 8.95081L7.15959 14.7512C7.24367 14.8803 7.35863 14.9863 7.49406 15.0597C7.62949 15.1331 7.78109 15.1716 7.93513 15.1716C8.08918 15.1716 8.24078 15.1331 8.37621 15.0597C8.51163 14.9863 8.6266 14.8803 8.71068 14.7512L12.4891 8.95081C13.1695 7.90634 13.4702 6.65974 13.3408 5.41995C13.2114 4.18015 12.6597 3.02252 11.7783 2.14109ZM11.6513 8.40496L7.93515 14.1096L4.219 8.40496C3.0815 6.65875 3.32546 4.32187 4.79909 2.84819C5.21092 2.43634 5.69983 2.10965 6.23792 1.88677C6.77601 1.66388 7.35273 1.54916 7.93515 1.54916C8.51757 1.54916 9.09429 1.66388 9.63238 1.88677C10.1705 2.10965 10.6594 2.43634 11.0712 2.84819C12.5448 4.32187 12.7888 6.65875 11.6513 8.40496Z"
         fill={fill || "#0587FF"}
+      />
+    </svg>
+  );
+};
+export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  const { fill, width, height, className } = props;
+
+  return (
+    <svg
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+        stroke={fill || "#989898"}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21 21L16.65 16.65"
+        stroke={fill || "#989898"}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+export const ChevronIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  const { fill, width, height, className } = props;
+
+  return (
+    <svg
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M6 9L12 15L18 9"
+        stroke={fill || "#FFF"}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+export const CloseIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  const { fill, width, height, className } = props;
+
+  return (
+    <svg
+      width={width || 24}
+      height={height || 24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M18 6L6 18"
+        stroke={fill || "#FE354D"}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6 6L18 18"
+        stroke={fill || "#FE354D"}
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
