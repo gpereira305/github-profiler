@@ -1,7 +1,8 @@
 import Image from "./shared/Image";
-import useFetchUserData from "../hooks/useFetchUserData";
-import UserProfileSkeleton from "./shared/UserProfileSkeleton";
+import useFetchGithubData from "../hooks/useFetchGithubData";
+import UserProfileSkeleton from "./loadingSkeletons/UserProfileSkeleton";
 import { useEffect, useState } from "react";
+import emoji from "../assets/emoji.svg";
 import {
   BuildingIcon,
   ChainIcon,
@@ -13,16 +14,16 @@ import {
 export default function UserProfile() {
   const [showAll, setShowAll] = useState(false);
 
-  const { userProfileQuery } = useFetchUserData();
+  const { userProfileQuery } = useFetchGithubData();
   const {
-    data: userProfile,
-    error: userProfileError,
+    data: userData,
     isLoading: isUserProfileLoading,
+    isError: userProfileError,
   } = userProfileQuery;
 
   useEffect(() => {
-    document.title = `Github Profiler | ${userProfile?.name || "Aguarde..."}`;
-  }, [userProfile?.name]);
+    document.title = `Github Profiler | ${userData?.name || "Aguarde..."}`;
+  }, [userData?.name]);
 
   const asideStyle = `
     flex-1 py-2 px-0 sm:px-8 flex max-w-[380px] flex-col lg:mx-0 mx-auto sm:w-ft w-full
@@ -50,28 +51,30 @@ export default function UserProfile() {
     );
   }
 
-  const { name, company, avatar_url, location, bio, socialMedia, instagram } =
-    userProfile;
-
   return (
     <aside className={asideStyle}>
       <figure
         className="
-          flex items-center bg-primary flex-col gap-4 pb-4 w-[150px] h-[150px]
+          flex items-center bg-primary flex-col gap-4 mb-4 w-[150px] h-[150px]
           rounded-full max-h-[200px] mx-auto relative border-[1px] border-dark-light
         "
       >
         <Image
-          src={avatar_url}
-          title={name}
-          alt={name}
+          src={userData?.avatar_url}
+          title={userData?.name}
+          alt={userData?.name}
           className="object-cover w-[inherit] h-[inherit] rounded-[inherit]"
+        />
+        <Image
+          src={emoji}
+          alt="emoji"
+          className="w-[35px] h-[35px] absolute bottom-[12px] right-0 bg-primary p-1 rounded-full shadow-sm"
         />
       </figure>
       <div className="text-sm text-dark-light text-center flex-col flex mb-6">
-        <span className="text-dark text-2xl font-bold">{name}</span>
+        <span className="text-dark text-2xl font-bold">{userData?.name}</span>
         <span className="text-base text-dark-light font-normal">
-          {bio || "Descrição não informada"}
+          {userData?.bio || "Descrição não informada"}
         </span>
       </div>
 
@@ -79,7 +82,7 @@ export default function UserProfile() {
         <span
           onClick={() => setShowAll(!showAll)}
           className="
-            cursor-pointer text-secondary text-sm font-normal flex-col items-center
+            cursor-pointer text-secondary text-sm font-semibold flex-col items-center
             sm:hidden flex
           "
         >
@@ -96,29 +99,31 @@ export default function UserProfile() {
           `}
         >
           <li className="flex items-center gap-4 text-sm text-secondary font-normal">
-            <BuildingIcon /> {company || "Local de trabalho não informado"}
+            <BuildingIcon />{" "}
+            {userData?.company || "Local de trabalho não informado"}
           </li>
           <li className="flex items-center gap-4 text-sm text-secondary font-normal">
-            <LocationPinIcon /> {location || "Localização não informada"}
+            <LocationPinIcon />{" "}
+            {userData?.location || "Localização não informada"}
           </li>
           <li className="flex items-center gap-4 text-sm text-secondary font-normal">
             <ChainIcon />
             <a
-              href={socialMedia || "#"}
+              href={userData?.socialMedia || "#"}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {socialMedia || "Link do site pessoal não informado"}
+              {userData?.socialMedia || "Link do site pessoal não informado"}
             </a>
           </li>
           <li className="flex items-center gap-4 text-sm text-secondary font-normal">
             <InstagramIcon />
             <a
-              href={instagram || "#"}
+              href={userData?.instagram || "#"}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {instagram || "Link do Instagram não informado"}
+              {userData?.instagram || "Link do Instagram não informado"}
             </a>
           </li>
         </ul>

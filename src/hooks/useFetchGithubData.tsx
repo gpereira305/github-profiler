@@ -3,12 +3,13 @@ import { ChangeEvent, useCallback, useMemo } from "react";
 import { useQueryStore } from "../states/query-store";
 import { useCurrentQueryStore } from "../states/current-query-store";
 import axios from "axios";
+import { useNavigate } from "@tanstack/react-router";
 
-export default function useFetchUserData() {
-  const api = "https://api.github.com/users";
-  const defaultUser = "gabrielcordeiro-dev";
+export default function useFetchGithubData() {
+  const API_URL = "https://api.github.com/users";
   const { searchQuery, setSearchQuery } = useQueryStore();
   const { currentQuery, setCurrentQuery } = useCurrentQueryStore();
+  const navigate = useNavigate();
 
   // paramnetros para as queries
   const queryOptions = useMemo(
@@ -27,34 +28,34 @@ export default function useFetchUserData() {
     queryKey: ["githubUser", currentQuery],
     enabled: Boolean(currentQuery),
     queryFn: async () => {
-      const response = await axios.get(`${api}/${currentQuery}`);
+      const response = await axios.get(`${API_URL}/${currentQuery}`);
       return response.data;
     },
   });
 
-  // dados de repositórios do usuário
+  // dados do repositórios do usuário
   const userReposQuery = useQuery({
     ...queryOptions,
     queryKey: ["githubUserRepos", currentQuery],
     enabled: Boolean(currentQuery),
     queryFn: async () => {
-      const response = await axios.get(`${api}/${currentQuery}/repos`);
+      const response = await axios.get(`${API_URL}/${currentQuery}/repos`);
       return response.data;
     },
   });
 
-  // dados de repositórios starred do usuário
+  // dados do repositórios starred do usuário
   const starredReposQuery = useQuery({
     ...queryOptions,
     queryKey: ["starredRepos", currentQuery],
     enabled: Boolean(currentQuery),
     queryFn: async () => {
-      const response = await axios.get(`${api}/${currentQuery}/starred`);
+      const response = await axios.get(`${API_URL}/${currentQuery}/starred`);
       return response.data;
     },
   });
 
-  // função para detectar o click do botão Enter
+  // função para detectar o click no botão Enter
   const handleKeyDown = useCallback(
     (e: KeyboardEvent | React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
@@ -67,14 +68,19 @@ export default function useFetchUserData() {
   // função para limpar o campo de busca
   const handleClearSearch = useCallback(() => {
     setSearchQuery("");
-    setCurrentQuery(defaultUser);
+    setCurrentQuery(currentQuery);
   }, []);
 
+  // função para controle do campo de busca
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setSearchQuery(e.target.value);
       if (e.target.value === "") {
         handleClearSearch();
+        setCurrentQuery(currentQuery);
+        navigate({
+          to: "/",
+        });
       }
     },
     [handleClearSearch]

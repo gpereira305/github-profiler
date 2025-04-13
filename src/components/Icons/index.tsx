@@ -80,7 +80,7 @@ export const BuildingIcon = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 export const ChainIcon = (props: React.SVGProps<SVGSVGElement>) => {
-  const { fill, width, height } = props;
+  const { fill, width, height, className } = props;
 
   return (
     <svg
@@ -89,6 +89,7 @@ export const ChainIcon = (props: React.SVGProps<SVGSVGElement>) => {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M7.2381 8.76187C7.97715 9.80339 9.53219 9.62054 10.2941 8.76187L11.8095 7.23806C12.6659 6.30244 12.6964 5.09406 11.8095 4.19044C10.944 3.30892 9.62743 3.30892 8.76191 4.19044L7.2381 5.71425"

@@ -1,4 +1,5 @@
-import useFetchUserData from "../hooks/useFetchUserData";
+import { useLocation, useRouter } from "@tanstack/react-router";
+import useFetchGithubData from "../hooks/useFetchGithubData";
 import { useDrawerStore } from "../states/drawer-store";
 import { useQueryStore } from "../states/query-store";
 import { useToggleTypeStore } from "../states/toggle-type-store";
@@ -10,13 +11,22 @@ export default function Filters() {
   const { toggleDrawer } = useDrawerStore();
   const { setToggleType } = useToggleTypeStore();
   const { handleChange, handleKeyDown, handleClearSearch } =
-    useFetchUserData() ?? {};
+    useFetchGithubData() ?? {};
+
+  const router = useRouter();
+  const location = useLocation();
 
   const handleDrawerToggle = (filterType: string) => {
-    console.log(filterType);
     setToggleType(filterType === "types");
     toggleDrawer();
   };
+
+  const handleClearSearchHistory = () => {
+    handleClearSearch();
+    router.history.back();
+  };
+
+  const isValidUrl = location.pathname === "/details";
 
   return (
     <>
@@ -36,23 +46,25 @@ export default function Filters() {
           {searchQuery !== "" && (
             <span
               className="text-sm text-dark font-normal flex items-center gap-2"
-              onClick={handleClearSearch}
+              onClick={handleClearSearchHistory}
             >
               <CloseIcon className="cursor-pointer absolute right-1" />
             </span>
           )}
         </div>
 
-        <div className="flex gap-4 items-center justify-center  sm:justify-end w-full">
-          <Button onClick={() => handleDrawerToggle("types")}>
-            <ChevronIcon />
-            Types
-          </Button>
-          <Button onClick={() => handleDrawerToggle("languages")}>
-            <ChevronIcon />
-            Languages
-          </Button>
-        </div>
+        {!isValidUrl ? (
+          <div className="flex gap-4 items-center justify-center sm:justify-end w-full">
+            <Button onClick={() => handleDrawerToggle("types")}>
+              <ChevronIcon />
+              Types
+            </Button>
+            <Button onClick={() => handleDrawerToggle("languages")}>
+              <ChevronIcon />
+              Languages
+            </Button>
+          </div>
+        ) : null}
       </div>
     </>
   );

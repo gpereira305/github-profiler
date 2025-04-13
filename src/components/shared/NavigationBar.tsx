@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { BookIcon, StarOulinedIcon } from "../Icons";
-import useFetchUserData from "../../hooks/useFetchUserData";
+import useFetchGithubData from "../../hooks/useFetchGithubData";
 
 export default function NavigationBar() {
-  const { starredReposQuery, userProfileQuery } = useFetchUserData();
+  const { starredReposQuery, userProfileQuery } = useFetchGithubData();
   const { data: starredRepos } = starredReposQuery;
   const { data: userRepos } = userProfileQuery;
 

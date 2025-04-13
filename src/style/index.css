@@ -72,3 +72,8 @@ button {
     border-radius: 0 !important;
   }
 }
+
+.custom-transition {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}

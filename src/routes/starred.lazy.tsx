@@ -1,17 +1,17 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import RepoList from "../components/shared/RepoList";
-import useFetchUserData from "../hooks/useFetchUserData";
+import useFetchGithubData from "../hooks/useFetchGithubData";
 
 export const Route = createLazyFileRoute("/starred")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const { starredReposQuery } = useFetchUserData();
+  const { starredReposQuery } = useFetchGithubData();
 
   const {
     data: starredRepos,
-    error: starredReposError,
+    isError: starredReposError,
     isLoading: isStarredReposLoading,
   } = starredReposQuery;
 

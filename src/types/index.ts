@@ -4,7 +4,7 @@ export interface ReposListTypes {
   language?: string | null | undefined;
   stargazers_count?: number | null | undefined;
   isRepos?: boolean | undefined;
-  html_url?: string | null;
+  url?: string | null;
   description?: string | null;
   owner?: { login: string };
   login?: string;

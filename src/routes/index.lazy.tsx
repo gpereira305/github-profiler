@@ -1,17 +1,17 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import RepoList from "../components/shared/RepoList";
-import useFetchUserData from "../hooks/useFetchUserData";
+import useFetchGithubData from "../hooks/useFetchGithubData";
 
 export const Route = createLazyFileRoute("/")({
   component: Index,
 });
 
 function Index() {
-  const { userReposQuery } = useFetchUserData();
+  const { userReposQuery } = useFetchGithubData();
 
   const {
     data: userRepos,
-    error: userReposError,
+    isError: userReposError,
     isLoading: isUserReposLoading,
   } = userReposQuery;
 
