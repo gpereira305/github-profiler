@@ -61,14 +61,14 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 <img width="1914" alt="Image" src="https://github.com/user-attachments/assets/9038d1d6-6d89-42b3-84e5-073e494dc3e6" />
  <hr>
 <img width="1916" alt="Image" src="https://github.com/user-attachments/assets/338b25cb-c18f-4ebf-9671-1ab86a6e5fbb" />
- <hr>
-<img width="1322" alt="Image" src="https://github.com/user-attachments/assets/a3b78bd8-e15b-47a8-addc-62d24f0d1eb9" />
- <hr>
-<img width="1332" alt="Image" src="https://github.com/user-attachments/assets/29804a7d-3e99-42ad-ada1-0ea625341c0a" />
+ 
 
 
 - Versão mobile
 
-  <img width="1728" alt="Image" src="https://github.com/user-attachments/assets/60cc63bd-8547-4d84-b513-0971c446b184" />
+<img width="1322" alt="Image" src="https://github.com/user-attachments/assets/a3b78bd8-e15b-47a8-addc-62d24f0d1eb9" />
+ <hr>
+<img width="1332" alt="Image" src="https://github.com/user-attachments/assets/29804a7d-3e99-42ad-ada1-0ea625341c0a" />
+
 
 
