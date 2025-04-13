@@ -80,21 +80,15 @@ O tempo para poder resolver essa parte também não foi favorável. Possivelment
  <hr>
  <img width="1911" alt="Image" src="https://github.com/user-attachments/assets/290e4497-20da-48eb-8f81-df4ba884c1d0" />
  <hr>
+
+ 
+- Versão mobile
+
  <img width="1066" alt="Image" src="https://github.com/user-attachments/assets/9b35a4f5-4d44-401c-ab5c-49931c715383" />
  <hr>
  <img width="1333" alt="Image" src="https://github.com/user-attachments/assets/6070fcbb-76e7-4b94-9e9c-57346695b13d" />
  <hr>
  <img width="1245" alt="Image" src="https://github.com/user-attachments/assets/fb63991b-7f3b-49e0-ae86-c1328bdf2b9c" />
- 
-
- 
-
-
-- Versão mobile
-
-<img width="1322" alt="Image" src="https://github.com/user-attachments/assets/a3b78bd8-e15b-47a8-addc-62d24f0d1eb9" />
- <hr>
-<img width="1332" alt="Image" src="https://github.com/user-attachments/assets/29804a7d-3e99-42ad-ada1-0ea625341c0a" />
 
 
 
