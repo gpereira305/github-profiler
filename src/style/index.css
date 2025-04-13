@@ -56,7 +56,7 @@ button {
   border-bottom: 2px solid #fd8c73;
 }
 
-/* estilo do drawer */
+/* DRAWER DE FILTROS */
 .EZDrawer__container.custom-drawer {
   width: 420px !important;
   padding: 20px !important;

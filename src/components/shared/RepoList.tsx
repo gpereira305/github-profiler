@@ -51,13 +51,15 @@ export default function RepoList({
     return ["All Languages", "TypeScript", "JavaScript", "HTML", "CSS"];
   }, []);
 
+  // status de carregamento
   if (isLoading) return <ReposListSkeleton />;
 
+  // status de erro
   if (isError)
     return (
       <div className="bg-gray sm:min-h-[60vh] min-h-[30vh] flex rounded-md items-center justify-center">
         <h2 className="text-lg text-red-500 font-bold text-center">
-          Nenhum conteúdo encontrado :(
+          Erro ao carregar dados :(
         </h2>
       </div>
     );

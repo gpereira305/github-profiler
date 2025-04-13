@@ -6,6 +6,6 @@ type CurrentQueryStore = {
 };
 
 export const useCurrentQueryStore = create<CurrentQueryStore>((set) => ({
-  currentQuery: "gpereira305",
+  currentQuery: "gabrielcordeiro-dev",
   setCurrentQuery: (currentQuery) => set({ currentQuery }),
 }));

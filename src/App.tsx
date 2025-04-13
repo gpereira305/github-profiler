@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import MainLayout from "./layouts/MainLayout";
 import UserProfile from "./components/UserProfile";
 import UserRepos from "./components/UserRepos";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <UserProfile />
         <UserRepos />
       </MainLayout>
+      <Footer />
     </>
   );
 }
