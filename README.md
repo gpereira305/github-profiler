@@ -3,33 +3,31 @@
 
 ## ** Sobre esse projeto **
 
-Este projeto consiste em duas páginas interligadas: a Homepage (página inicial) e a Página de Detalhes do Produto.
+Este projeto oferece uma plataforma dinâmica para explorar perfis e repositórios do GitHub, com as seguintes funcionalidades:
+- Pesquisa de usuários do GitHub por nome.
+- Filtros personalizáveis por tecnologias e características específicas dos repositórios.
+- Avatar e informações básicas: Nome, biografia, localização e links de redes sociais.
 
-Na página inicial, o usuário é introduzido ao propósito da plataforma por meio de uma navegação intuitiva entre seções estratégicas:
+Filtragem Intuitiva:
+- O botão "Types": Abre um drawer lateral para filtrar repositórios por características (ex: forks, sources, arquived, mirrors).
 
-A seção "Como Funciona"
-apresenta informações claras sobre o processo de atendimento ao cliente e os detalhes logísticos da entrega dos produtos, garantindo transparência desde o primeiro contato.
+- O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Javascript, HTML, CSS, Typescript).
 
-A seção "Produtos mais vendidos"
-exibe um carrossel com os produtos mais vendidos da loja. Cada produto inclui um botão "Detalhes", que redireciona o usuário para a página específica do item, permitindo um aprofundamento nas características técnicas.
+Na aba Repositórios:
+- Listagem dos projetos mais relevantes do usuário, apresentada em uma seção dedicada à direita.
 
-A seção "Marcas Parceiras"
-destaca as marcas conceituadas que colaboram com a loja, para reforçar a credibilidade do catálogo e a variedade de opções disponíveis.
-
-Na seção "Filtro por Marca"
-é oferecida a possibilidade de busca personalizada, onde o usuário pode selecionar uma marca específica para acessar diretamente suas páginas de detalhes.
-
-Na Página de "Detalhes do produto",
-ao acessar essa página, o usuário encontra informações completas sobre o item selecionado, incluindo:
- - Especificações técnicas: marca, preço, data de fabricação e estado do produto (novo ou usado), etc.
-
-Ambas as páginas foram desenvolvidas com foco na experiência do usuário, priorizando a navegação fluida, responsividade, com design intuitivo e o acesso rápido às informações essenciais.
+Na aba Starred:
+Exibe repositórios favoritados pelo usuário, permitindo explorar projetos que ele curtiu ou avaliou. 
 
 
-
+Tecnologias Utilizadas:
+ - Desenvolvido em React com TypeScript para tipagem estática e segurança no código.
+ - Tanstack Query para chamadas eficientes e cache de dados.
+ - Tanstack Router para controle dinâmico de navegação.
+ - Tailwind CSS para design responsivo e interfaces adaptáveis a diferentes dispositivos.
  
 
-## **Tecnologias usadas**
+## **Links das tecnologias usadas**
 
 - <a href="https://pt-br.reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a> 
 - <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a> 
