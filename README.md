@@ -14,10 +14,10 @@ Filtragem Intuitiva:
 - O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Javascript, HTML, CSS, Typescript).
 
 Na aba Repositórios:
-- Listagem dos projetos mais relevantes do usuário, apresentada em uma seção dedicada à direita.
+- Listagem dos projetos mais relevantes do usuário com a quantidade de stars e forks.
 
 Na aba Starred:
-Exibe repositórios favoritados pelo usuário, permitindo explorar projetos que ele curtiu ou avaliou. 
+- É exibido os repositórios favoritados pelo usuário, permitindo explorar projetos que ele curtiu. 
 
 
 Tecnologias Utilizadas:
