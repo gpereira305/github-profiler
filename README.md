@@ -1,4 +1,4 @@
-# ** Projeto Github-Profiler - React + Typescript **
+# ** Projeto Github-Profiler | React + Typescript **
  <hr>
 
 ## ** Sobre esse projeto **
