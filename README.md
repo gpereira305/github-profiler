@@ -1,4 +1,4 @@
-# ** Projeto Magazord  - React JS **
+# ** Projeto Github-Profiler - React + Typescript **
  <hr>
 
 ## ** Sobre esse projeto **
