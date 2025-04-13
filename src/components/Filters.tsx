@@ -46,11 +46,11 @@ export default function Filters() {
         <div className="flex gap-4 items-center justify-center  sm:justify-end w-full">
           <Button onClick={() => handleDrawerToggle("types")}>
             <ChevronIcon />
-            types
+            Types
           </Button>
           <Button onClick={() => handleDrawerToggle("languages")}>
             <ChevronIcon />
-            languages
+            Languages
           </Button>
         </div>
       </div>
