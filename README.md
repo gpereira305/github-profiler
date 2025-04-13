@@ -31,11 +31,11 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 
 ## **Tecnologias usadas**
 
-- <a href="https://pt-br.reactjs.org/">React JS</a> 
-- <a href="https://www.typescriptlang.org/">TypeScript</a> 
-- <a href="https://tanstack.com/query/latest">Tanstack Query</a>   
-- <a href="https://tanstack.com/router/latest">Tanstack Router</a>   
-- <a href="https://tailwindcss.com/">Tailwind CSS</a>    
+- <a href="https://pt-br.reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a> 
+- <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a> 
+- <a href="https://tanstack.com/query/latest" target="_blank" rel="noopener noreferrer">Tanstack Query</a>   
+- <a href="https://tanstack.com/router/latest" target="_blank" rel="noopener noreferrer">Tanstack Router</a>   
+- <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>    
 <hr>
  
 
@@ -52,7 +52,8 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 
 
 ## **Visitar online**
- - <a href="https://github-user-profiler.netlify.app/">Acesse o site nesse link</a>    
+ - <a href="https://github-user-profiler.netlify.app/" target="_blank" rel="noopener noreferrer">Acesse o site nesse link</a>
+ 
 
 
 
