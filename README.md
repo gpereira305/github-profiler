@@ -51,6 +51,11 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 <hr>
 
 
+## **Visitar online**
+ - <a href="https://github-user-profiler.netlify.app/">Acesse o site nesse link</a>    
+
+
+
 ## **Screenshots**
 - Desktop
   
