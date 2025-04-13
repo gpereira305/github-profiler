@@ -1,4 +1,4 @@
-# ** Projeto Prolog Pneus  - React JS **
+# ** Projeto Magazord  - React JS **
  <hr>
 
 ## ** Sobre esse projeto **
@@ -34,8 +34,8 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 - <a href="https://pt-br.reactjs.org/">React JS</a> 
 - <a href="https://www.typescriptlang.org/">TypeScript</a> 
 - <a href="https://tanstack.com/query/latest">Tanstack Query</a>   
-- <a href="https://swiperjs.com">Swiper JS</a>  
-- <a href="https://jestjs.io/">Jest JS</a>  
+- <a href="https://tanstack.com/router/latest">Tanstack Router</a>   
+- <a href="https://tailwindcss.com/">Tailwind CSS</a>    
 <hr>
  
 
