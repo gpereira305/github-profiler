@@ -11,7 +11,7 @@ Este projeto oferece uma plataforma dinâmica para explorar perfis e repositóri
 Filtragem Intuitiva:
 - O botão "Types": Abre um drawer lateral para filtrar repositórios por características (ex: forks, sources, arquived, mirrors).
 
-- O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Javascript, HTML, CSS, Typescript).
+- O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Java, HTML, CSS, Typescript).
 
 Na aba Repositórios:
 - Listagem dos projetos mais relevantes do usuário com a quantidade de stars e forks.
