@@ -1,7 +1,7 @@
 # ** Projeto Github-Profiler | React + Typescript **
  <hr>
 
-## ** Sobre esse projeto **
+## ** Informações sobre o projeto **
 
 Este projeto oferece uma plataforma dinâmica para explorar perfis e repositórios do GitHub, com as seguintes funcionalidades:
 - Pesquisa de usuários do GitHub por nome.
