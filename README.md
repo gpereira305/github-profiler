@@ -54,13 +54,17 @@ Ambas as páginas foram desenvolvidas com foco na experiência do usuário, prio
 ## **Screenshots**
 - Desktop
   
- <img width="1917" alt="Image" src="https://github.com/user-attachments/assets/717a5758-7881-49b3-8aeb-b964e0fb93fe" />
+ <img width="1915" alt="Image" src="https://github.com/user-attachments/assets/5235762f-d739-4866-95ed-d3ff1efe8e1e" />
  <hr>
- <img width="1918" alt="Image" src="https://github.com/user-attachments/assets/23d23184-cea2-4bee-a14e-ce8537f5bfde" />
+ <img width="1901" alt="Image" src="https://github.com/user-attachments/assets/18562c26-eee7-4380-8339-6bf08bf912ff" />
  <hr>
- <img width="1915" alt="Image" src="https://github.com/user-attachments/assets/355f9c19-1616-47b1-841d-a3b7b2e6dd5b" />
+<img width="1914" alt="Image" src="https://github.com/user-attachments/assets/9038d1d6-6d89-42b3-84e5-073e494dc3e6" />
  <hr>
- <img width="1917" alt="Image" src="https://github.com/user-attachments/assets/b693399b-8923-47ae-9caf-efed40e8291e" /> 
+<img width="1916" alt="Image" src="https://github.com/user-attachments/assets/338b25cb-c18f-4ebf-9671-1ab86a6e5fbb" />
+ <hr>
+<img width="1322" alt="Image" src="https://github.com/user-attachments/assets/a3b78bd8-e15b-47a8-addc-62d24f0d1eb9" />
+ <hr>
+<img width="1332" alt="Image" src="https://github.com/user-attachments/assets/29804a7d-3e99-42ad-ada1-0ea625341c0a" />
 
 
 - Versão mobile
