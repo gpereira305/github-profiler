@@ -1,17 +1,17 @@
-# ** Projeto Magazord  - React JS **
+# ** Projeto Github-Profiler | React + Typescript **
  <hr>
 
-## ** Sobre esse projeto **
+## ** Informações sobre o projeto **
 
 Este projeto oferece uma plataforma dinâmica para explorar perfis e repositórios do GitHub, com as seguintes funcionalidades:
 - Pesquisa de usuários do GitHub por nome.
 - Filtros personalizáveis por tecnologias e características específicas dos repositórios.
-- Avatar e informações básicas: Nome, biografia, localização e links de redes sociais.
+- Avatar e informações básicas: nome, biografia, localização e links de redes sociais.
 
 Filtragem Intuitiva:
 - O botão "Types": Abre um drawer lateral para filtrar repositórios por características (ex: forks, sources, arquived, mirrors).
 
-- O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Javascript, HTML, CSS, Typescript).
+- O botão "Languages": Permite filtrar projetos pelas linguagens de programação utilizadas (ex: Java, HTML, CSS, Typescript).
 
 Na aba Repositórios:
 - Listagem dos projetos mais relevantes do usuário com a quantidade de stars e forks.
