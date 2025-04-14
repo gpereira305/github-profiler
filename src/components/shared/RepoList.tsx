@@ -145,10 +145,10 @@ export default function RepoList({
           </ul>
           {!showAll && filteredRepos.length > DATA_LENGTH && (
             <button
-              className="text-secondary font-semibold flex items-center flex-col cursor-pointer text-sm"
+              className="text-secondary font-semibold flex items-center flex-col cursor-pointer text-sm mx-auto"
               onClick={() => setShowAll(true)}
             >
-              Mostrar tudo <ChevronIcon fill="var(--color-secondary)" />
+              Ver tudo <ChevronIcon fill="var(--color-secondary)" />
             </button>
           )}
         </>

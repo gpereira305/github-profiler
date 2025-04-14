@@ -111,7 +111,7 @@ function RouteComponent() {
       isLink: true,
     },
     {
-      label: "Responsável:",
+      label: "Autor:",
       value: repositoryData?.owner?.login,
       link: repositoryData?.owner?.html_url,
       isLink: true,
@@ -153,7 +153,7 @@ function RouteComponent() {
       isLink: false,
     },
     {
-      label: "Hospedagem:",
+      label: "Live:",
       value: repositoryData?.homepage,
       link: repositoryData?.homepage,
       isLink: true,
@@ -234,7 +234,7 @@ function RouteComponent() {
           className="text-secondary font-semibold flex items-center flex-col cursor-pointer text-sm mx-auto mt-5"
           onClick={handleToggleShowMore}
         >
-          Mostrar tudo <ChevronIcon fill="var(--color-secondary)" />
+          Ver tudo <ChevronIcon fill="var(--color-secondary)" />
         </button>
       )}
     </div>

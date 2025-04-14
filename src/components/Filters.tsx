@@ -26,7 +26,8 @@ export default function Filters() {
     router.history.back();
   };
 
-  const isValidUrl = location.pathname === "/details";
+  const isValidUrl =
+    location.pathname === "/" || location.pathname === "/starred";
 
   return (
     <>
@@ -53,7 +54,7 @@ export default function Filters() {
           )}
         </div>
 
-        {!isValidUrl ? (
+        {isValidUrl ? (
           <div className="flex gap-4 items-center justify-center sm:justify-end w-full">
             <Button onClick={() => handleDrawerToggle("types")}>
               <ChevronIcon />
